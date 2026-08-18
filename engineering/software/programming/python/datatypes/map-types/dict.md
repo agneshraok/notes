@@ -21,6 +21,11 @@
 
 
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 # Creating Dictionaries
 
 - Using {}
@@ -73,10 +78,10 @@
       #  'Joe': {'ID': '003', 'Salary': 1843, 'Designation': 'Hadoop Developer'}}}
       ```
 
-<br>
-<br>
-<br>
-<br>
+<br/>
+<br/>
+<br/>
+<br/>
 
 # Criteria for key
 
@@ -91,16 +96,16 @@ In Python, a type can be used as a dictionary key only if it is hashable (immuta
   - dict
   - set
 
-<br>
-<br>
-<br>
-<br>
+<br/>
+<br/>
+<br/>
+<br/>
 
 # Methods
 
-<br>
-<br>
-<br>
+<br/>
+<br/>
+<br/>
 
 ## Inserting items
 
@@ -112,9 +117,9 @@ print(my_dict)
 #>{'Dave': '001', 'Ava': '002', 'Joe': '003', 'Jack': '007'}
 ```
 
-<br>
-<br>
-<br>
+<br/>
+<br/>
+<br/>
 
 ## Accessing list of key value pairs
 
@@ -135,9 +140,9 @@ print(my_dict.items())
   #>('Dave', '001')
   ```
 
-<br>
-<br>
-<br>
+<br/>
+<br/>
+<br/>
 
 ## Accessing Keys
 
@@ -149,9 +154,9 @@ print(my_dict.keys())
 #>dict_keys(['Dave', 'Ava', 'Joe'])
 ```
 
-<br>
-<br>
-<br>
+<br/>
+<br/>
+<br/>
 
 ## Accessing Values
 
@@ -183,9 +188,9 @@ print(my_dict.keys())
   #>'001'
   ```
 
-<br>
-<br>
-<br>
+<br/>
+<br/>
+<br/>
 
 ## Deleting items from a dictionary
 
@@ -201,9 +206,9 @@ print(my_dict)
 #>{'Joe':'003'}
 ```
 
-<br>
-<br>
-<br>
+<br/>
+<br/>
+<br/>
 
 ## Sorting dicts
 
@@ -227,18 +232,18 @@ print(my_dict)
    #>{'y': 25, 'z': 26, 't': 500, 'a': 1000}
    ```
 
-<br>
-<br>
+<br/>
+<br/>
 
 ### Difference between sorted() and sort()
 
 - sorted() is a function and it expects parameters to be passed to it. It creates a new object and must be stored in a variable.
 - sort() is a method and has to be called by an object. It is called in-place.
 
-<br>
-<br>
-<br>
-<br>
+<br/>
+<br/>
+<br/>
+<br/>
 
 # Default Dict
 
@@ -314,9 +319,9 @@ print(freq_dict)
   #>defaultdict(<class 'list'>, {'Annie': ['German', 'English'], 'Dan': ['English'], 'Gwen': ['Spanish', 'Kannada']})
   ```
 
-<br>
-<br>
-<br>
+<br/>
+<br/>
+<br/>
 
 ## Default dict methods
 
