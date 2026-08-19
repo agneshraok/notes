@@ -2,18 +2,20 @@
 
 # Contents
 
-- [Creating Dictionaries](#creating-dictionaries)
-- [Criteria for key](#criteria-for-key)
-- [Methods](#methods)
-  - [Inserting items](#inserting-items)
-  - [Accessing list of key value pairs](#accessing-list-of-key-value-pairs)
-  - [Accessing Keys](#accessing-keys)
-  - [Accessing Values](#accessing-values)
-  - [Deleting items from a dictionary](#deleting-items-from-a-dictionary)
-  - [Sorting dicts](#sorting-dicts)
-    - [Difference between sorted() and sort()](#difference-between-sorted-and-sort)
-- [Default Dict](#default-dict)
-  - [Default dict methods](#default-dict-methods)
+- [Dictionary](#dictionary)
+  - [Creating Dictionaries](#creating-dictionaries)
+    - [Criteria for key](#criteria-for-key)
+  - [Methods](#methods)
+    - [Inserting an element](#inserting-an-element)
+    - [Get all key value pairs](#get-all-key-value-pairs)
+    - [Get all keys](#get-all-keys)
+    - [Get all values](#get-all-values)
+    - [Get a value](#get-a-value)
+    - [Delete an elementt](#delete-an-elementt)
+    - [Delete all elements](#delete-all-elements)
+    - [Sorting](#sorting)
+  - [Default Dict](#default-dict)
+    - [Default dict methods](#default-dict-methods)
 
 <br>
 <br>
@@ -26,7 +28,15 @@
 <br/>
 <br/>
 
-# Creating Dictionaries
+# Dictionary
+
+A dictionary is a map datastructure with key and value pairs.
+
+<br/>
+<br/>
+<br/>
+
+## Creating Dictionaries
 
 - Using {}
 
@@ -66,26 +76,22 @@
 
 - Nested dictionaries (dictionaries containing dictionaries) can also be created
 
-      ```python
-      emp_details = {'Employee': {'Dave': {'ID': '001','Salary': 2000, 'Designation':'Python Developer'},
-                                  'Ava': {'ID':'002','Salary': 2300,'Designation': 'Java Developer' },
-                                  'Joe': {'ID': '003','Salary': 1843, 'Designation': 'Hadoop Developer'}}}
-
-      print(emp_details)
-
-      #> {'Employee': {'Dave': {'ID': '001', 'Salary': 2000,  'Designation': 'Python Developer'},
-      #   'Ava': {'ID': '002', 'Salary': 2300, 'Designation': 'Java Developer'},
-      #  'Joe': {'ID': '003', 'Salary': 1843, 'Designation': 'Hadoop Developer'}}}
-      ```
+  ```python
+  emp_details = {'Employee': {'Dave': {'ID': '001','Salary': 2000, 'Designation':'Python Developer'},
+                              'Ava': {'ID':'002','Salary': 2300,'Designation': 'Java Developer' },
+                              'Joe': {'ID': '003','Salary': 1843, 'Designation': 'Hadoop Developer'}}}
+  print(emp_details)
+  #> {'Employee': {'Dave': {'ID': '001', 'Salary': 2000,  'Designation': 'Python Developer'},
+  #   'Ava': {'ID': '002', 'Salary': 2300, 'Designation': 'Java Developer'},
+  #  'Joe': {'ID': '003', 'Salary': 1843, 'Designation': 'Hadoop Developer'}}}
+  ```
 
 <br/>
 <br/>
-<br/>
-<br/>
 
-# Criteria for key
+### Criteria for key
 
-In Python, a type can be used as a dictionary key only if it is hashable (immutable).
+In Python, a type can be used as a dictionary key only if it is [hashable](../set-types/sets.md#hashability) (immutable).
 
 - Common key types :
   - int, float, bool, complex, str, bytes
@@ -99,15 +105,27 @@ In Python, a type can be used as a dictionary key only if it is hashable (immuta
 <br/>
 <br/>
 <br/>
+
+## Methods
+
+| Operation               | Method      | Example                                | Time complexity |
+| ----------------------- | ----------- | -------------------------------------- | --------------- |
+| Insert an element       | [] opertor  | map["new key"] = "new value"           | $O(1)$          |
+| Get all key value pairs | items()     | map.items()                            | $O(n)$          |
+| Get all keys            | keys()      | map.keys()                             | $O(n)$          |
+| Get all values          | values()    | map.values()                           | $O(n)$          |
+| Get value               | [] operator | map['a']                               | $O(1)$          |
+|                         | get(key)    | map.get('a')                           | $O(1)$          |
+| Delete an element       | pop(key)    | map.pop('a')                           | $O(1)$          |
+|                         | popitem()   | map.popitem()                          | $O(1)$          |
+|                         | del keyword | del map['a']                           | $O(1)$          |
+| Delete all elements     | clear()     | map.clear()                            | $O(n)$          |
+| Sort                    | sorted()    | sorted_map = dict(sorted(map.items())) | $O(n*log(n))$   |
+
+<br/>
 <br/>
 
-# Methods
-
-<br/>
-<br/>
-<br/>
-
-## Inserting items
+### Inserting an element
 
 ```python
 my_dict={'Dave' : '001' , 'Ava': '002' , 'Joe': '003'}
@@ -119,9 +137,8 @@ print(my_dict)
 
 <br/>
 <br/>
-<br/>
 
-## Accessing list of key value pairs
+### Get all key value pairs
 
 ```python
 my_dict={'Dave' : '001' , 'Ava': '002' , 'Joe': '003'}
@@ -142,9 +159,8 @@ print(my_dict.items())
 
 <br/>
 <br/>
-<br/>
 
-## Accessing Keys
+### Get all keys
 
 ```python
 my_dict={'Dave' : '001' , 'Ava': '002' , 'Joe': '003'}
@@ -156,9 +172,8 @@ print(my_dict.keys())
 
 <br/>
 <br/>
-<br/>
 
-## Accessing Values
+### Get all values
 
 - Get list of all the values of the dict.
 
@@ -170,6 +185,11 @@ print(my_dict.keys())
   #> <class 'dict_values'>
   #> dict_values(['001', '002', '003'])
   ```
+
+<br/>
+<br/>
+
+### Get a value
 
 - Get specific value for a key.
 
@@ -190,29 +210,42 @@ print(my_dict.keys())
 
 <br/>
 <br/>
-<br/>
 
-## Deleting items from a dictionary
+### Delete an elementt
 
-items can be deleted using `del()`, `pop()`, `popitem()`, `clear()`
+- items can be deleted using `del()`, `pop()`, `popitem()`
 
-```python
-my_dict={'Dave': '004', 'Ava': '002', 'Joe': '003', 'Chris': '005'}
-del my_dict['Dave']  #removes key-value pair of 'Dave'
-my_dict.pop('Ava')   #removes the value of 'Ava'
-my_dict.popitem()    #removes the last inserted item
-print(my_dict)
+  ```python
+  my_dict={'Dave': '004', 'Ava': '002', 'Joe': '003', 'Chris': '005'}
+  del my_dict['Dave']  #removes key-value pair of 'Dave'
+  my_dict.pop('Ava')   #removes the value of 'Ava'
+  my_dict.popitem()    #removes the last inserted item
+  print(my_dict)
 
-#>{'Joe':'003'}
-```
+  #>{'Joe':'003'}
+  ```
 
-<br/>
 <br/>
 <br/>
 
-## Sorting dicts
+### Delete all elements
 
-1. Sorting dicts by keys
+- items can be deleted using `del()`, `pop()`, `popitem()`
+
+  ```python
+  my_dict={'Dave': '004', 'Ava': '002', 'Joe': '003', 'Chris': '005'}
+  my_dict.clear()
+  print(my_dict)
+
+  #>{}
+  ```
+
+<br/>
+<br/>
+
+### Sorting
+
+1. Sorting dicts by keys. `sorted()` function returns a list of sorted elements which needs to be converted to `dict`.
 
    ```python
    newdict = {'a':1000, 'z':26, 't':500, 'y':25}
@@ -234,18 +267,9 @@ print(my_dict)
 
 <br/>
 <br/>
-
-### Difference between sorted() and sort()
-
-- sorted() is a function and it expects parameters to be passed to it. It creates a new object and must be stored in a variable.
-- sort() is a method and has to be called by an object. It is called in-place.
-
-<br/>
-<br/>
-<br/>
 <br/>
 
-# Default Dict
+## Default Dict
 
 - Must be imported from the collections package.
 - A defaultdict works exactly like a normal dict, but it is initialized with a function (“default factory”) that takes no arguments and provides the default value for a nonexistent key. A defaultdict will never raise a KeyError. Any key that does not exist gets the value returned by the default factory.
@@ -321,9 +345,8 @@ print(freq_dict)
 
 <br/>
 <br/>
-<br/>
 
-## Default dict methods
+### Default dict methods
 
 - Get value if key exists, otherwise insert and return a default value using `setdefault`.
 
