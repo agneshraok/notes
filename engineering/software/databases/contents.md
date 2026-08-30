@@ -6,6 +6,8 @@
 
 - [contents.md](contents.md)
 
+- [databases.md](databases.md)
+
 ## Subdirectories
 
 - [01-sql](01-sql/01-sql)

@@ -2,30 +2,22 @@
 
 # software
 
-## Files
+- [fundamentals](fundamentals/contents.md)
 
-- [contents.md](contents.md)
+- [programming](programming/contents.md)
 
-## Subdirectories
+- [devtools](devtools/contents.md)
 
-- [android-development](android-development/android-development)
+- [operating-systems](operating-systems/contents.md)
 
-- [artificial-intelligence](artificial-intelligence/artificial-intelligence)
+- [databases](databases/contents.md)
 
-- [databases](databases/databases)
+- [networking](networking/contents.md)
 
-- [devtools](devtools/devtools)
+- [web-development](web-development/contents.md)
 
-- [frameworks-and-libraries](frameworks-and-libraries/frameworks-and-libraries)
+- [android-development](android-development/contents.md)
 
-- [fundamentals](fundamentals/fundamentals)
+- [artificial-intelligence](artificial-intelligence/contents.md)
 
-- [networking](networking/networking)
-
-- [operating-systems](operating-systems/operating-systems)
-
-- [programming](programming/programming)
-
-- [web-development](web-development/web-development)
-
-- [z-miscellaneous](z-miscellaneous/z-miscellaneous)
+- [frameworks-and-libraries](frameworks-and-libraries/contents.md)
