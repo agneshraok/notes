@@ -64,8 +64,9 @@ alias can be created to simplify the commands. It allows to define custom shorth
 For example, creating an alias for git `log --oneline --all --graph` command.
 
 ```bash
-git config --gloabl alias.lg "log --oneline --graph --all"  #global alias
-got config --local alias.lg "log --oneline --graph --all"  #local alias
+git config --global alias.lg "log --oneline --graph --all"  #global alias
+git config --local alias.lg "log --oneline --graph --all"  #local alias
+git config --global alias.pp '!git pull && git push' #Note that ! is needed here. The ! at the start tells Git to execute the alias as a shell command rather than a built-in Git subcommand.
 ```
 
 <br>
