@@ -4,14 +4,22 @@
 
 - [Lists](#lists)
   - [Creating lists](#creating-lists)
-  - [Inserting Items](#inserting-items)
-  - [Accessing Items](#accessing-items)
-  - [Deleting list Items](#deleting-list-items)
-  - [Sorting lists](#sorting-lists)
+  - [Methods](#methods)
+    - [Insert an element](#insert-an-element)
+    - [Insert at the end](#insert-at-the-end)
+    - [Extend](#extend)
+    - [Access element](#access-element)
+    - [Access elements](#access-elements)
+    - [Delete element](#delete-element)
+    - [Delete last element](#delete-last-element)
+    - [Delete all elements](#delete-all-elements)
+    - [Sort](#sort)
+    - [Get index](#get-index)
+    - [Reverse](#reverse)
+    - [Get max element](#get-max-element)
   - [Unpacking list](#unpacking-list)
   - [List comphrehension](#list-comphrehension)
   - [List replication](#list-replication)
-  - [List methods](#list-methods)
 
 <br>
 <br>
@@ -41,78 +49,116 @@ print(myList)
 <br/>
 <br/>
 
-## Inserting Items
+## Methods
 
-- `insert()` : Inserts a given element at a given index in a list.
+| Operation           | Method               | Example                 | Time complexity |
+| ------------------- | -------------------- | ----------------------- | --------------- |
+| Insert an element   | insert(index, value) | nums.insert(2,"apple")  | $O(n)$          |
+| Insert at the end   | append(value)        | nums.append("banana")   | $O(1)$          |
+| Extend              | extend(list)         | nums.extend([4,5,6])    | $O(k)$          |
+| Access element      | [] operator          | nums[0]                 | $O(1)$          |
+| Access elements     | [] opertor           | nums[1:5]               | $O(k)$          |
+| Delete element      | remove(index)        | nums.remove(2)          | $O(n)$          |
+|                     | del keyword          | del nums[2]             | $O(n)$          |
+| Delete last element | pop()                | nums.pop()              | $O(1)$          |
+| Delete all elements | clear()              | nums.clear()            | $O(n)$          |
+| Sort                | sort()               | nums.sort()             | $O(n*log(n))$   |
+|                     | sorted()             | new_nums = sorted(nums) | $O(n*log(n))$   |
+| Get index           | index(value)         | nums.index(2)           | $O(n)$          |
+| Reverse             | reverse()            | nums.reverse()          | $O(n)$          |
+| Get max element     | max(list)            | max(nums)               | $O(n)$          |
+
+<br/>
+<br/>
+
+### Insert an element
+
+`insert()` : Inserts a given element at a given index in a list.
+
+```python
+myList = [1,2,3,4,5,6]
+myList.insert(0, 'Zero')
+print(myList)
+
+#>['Zero', 1, 2, 3, 4, 5, 6]
+```
+
+<br/>
+<br/>
+
+### Insert at the end
+
+`append()` : Insertion to the end of the list.
+
+```python
+myList = [1,2,3,4,5,6]
+myList.append(7)
+print(myList)
+
+#>[1, 2, 3, 4, 5, 6, 7]
+```
+
+<br/>
+<br/>
+
+### Extend
+
+`extend()`: extend the list
+
+```python
+list1 = [1,2,3]
+list2 = ['a','b','c']
+
+list1.extend(list2)
+
+print(list1)
+
+#>[1, 2, 3, 'a', 'b', 'c']
+```
+
+<br/>
+<br/>
+
+### Access element
+
+Accessing a single item using index
+
+```python
+myList = [1, 'all', {'a':1}, ('a','b',1)]
+print(myList[1])
+
+#>'all'
+```
+
+<br/>
+<br/>
+
+### Access elements
+
+Accesing multiple items using range notation
+
+```python
+myList = [1, 'all', {'a':1}, ('a','b',1)]
+print(myList[0:1])
+
+#>[1]
+```
+
+- We can use out of index numbers with this notation,
 
   ```python
-  myList = [1,2,3,4,5,6]
-  myList.insert(0, 'Zero')
-  print(myList)
+  arr = [1,2,3,4]
+  print(arr[6:])
+  print(arr[:10])
 
-  #>['Zero', 1, 2, 3, 4, 5, 6]
-  ```
-
-- `append()` : Insertion to the end of the list.
-
-  ```python
-  myList = [1,2,3,4,5,6]
-  myList.append(7)
-  print(myList)
-
-  #>[1, 2, 3, 4, 5, 6, 7]
+  #>[]
+  #>[1,2,3,4]
   ```
 
 <br/>
 <br/>
-<br/>
 
-## Accessing Items
-
-- Accessing a single item using index
-
-  ```python
-  myList = [1, 'all', {'a':1}, ('a','b',1)]
-  print(myList[1])
-
-  #>'all'
-  ```
-
-- Accesing multiple items using range notation
-
-  ```python
-  myList = [1, 'all', {'a':1}, ('a','b',1)]
-  print(myList[0:1])
-
-  #>[1]
-  ```
-
-  - We can use out of index numbers with this notation,
-
-    ```python
-    arr = [1,2,3,4]
-    print(arr[6:])
-    print(arr[:10])
-
-    #>[]
-    #>[1,2,3,4]
-    ```
-
-- Accesing last item using `pop()`
-
-  ```python
-  myList = [1, 'all', {'a':1}, ('a','b',1)]
-  lastItem = myList.pop()
-  print(lastItem)
-
-  #>('a', 'b', 1)
-  ```
-
-<br/>
-<br/>
-<br/>
-
-## Deleting list Items
+### Delete element
 
 - `remove()` : Used to remove a specific item from a list.
 
@@ -122,17 +168,6 @@ print(myList)
   print(myList)
 
   #>[1, 2, 4, 5, 6]
-  ```
-
-- `pop()` : Used to remove the last item or a specific item at a specific index
-
-  ```python
-  myList = [1,2,3,4,5,6]
-  myList.pop()
-  myList.pop(0)
-  print(myList)
-
-  #>[2, 3, 4, 5]
   ```
 
 - `del` keyword : Used to remove a specific item at a specific index.
@@ -145,20 +180,40 @@ print(myList)
   #[1, 3, 4, 5, 6]
   ```
 
-- `clear()` : to clear the entire list.
+<br/>
+<br/>
+
+### Delete last element
+
+- `pop()` : Used to remove the last item or a specific item at a specific index
 
   ```python
   myList = [1,2,3,4,5,6]
-  myList.clear()
+  myList.pop()
+  myList.pop(0)
   print(myList)
-  #>[]
+
+  #>[2, 3, 4, 5]
   ```
 
 <br/>
 <br/>
+
+### Delete all elements
+
+`clear()` : to clear the entire list.
+
+```python
+myList = [1,2,3,4,5,6]
+myList.clear()
+print(myList)
+#>[]
+```
+
+<br/>
 <br/>
 
-## Sorting lists
+### Sort
 
 - Using `sort()` method.
 
@@ -179,6 +234,50 @@ print(myList)
 
   #>[1, 2, 3, 4, 5, 6]
   ```
+
+<br/>
+<br/>
+
+### Get index
+
+`index()` : Returns the lowest index where the element appears.
+
+```python
+myList = [1,2,3,4,5,6]
+print(myList.index(2))
+
+#>1
+```
+
+<br/>
+<br/>
+
+### Reverse
+
+`reverse()` : To reverse the list.
+
+```python
+myList = [1,2,3,4,5,6]
+myList.reverse()
+print(myList)
+
+#>[6, 5, 4, 3, 2, 1]
+```
+
+<br/>
+<br/>
+
+### Get max element
+
+`max()` : get the item with maximum value
+
+```python
+myList = [6,4,5,1,2,3]
+res = max(myList)
+print(res)
+
+#>6
+```
 
 <br/>
 <br/>
@@ -285,8 +384,9 @@ for i,j,k in myList:
   #>['Raze', 'Raze']
   ```
 
-<br>
-<br>
+<br/>
+<br/>
+<br/>
 
 ## List replication
 
@@ -306,56 +406,3 @@ print(arr)
 
   #[[100], [100]]
   ```
-
-<br/>
-<br/>
-<br/>
-
-## List methods
-
-- `index()` : Returns the lowest index where the element appears.
-
-  ```python
-  myList = [1,2,3,4,5,6]
-  print(myList.index(2))
-
-  #>1
-  ```
-
-- `reverse()` : To get the reverse of the list.
-
-  ```python
-  myList = [1,2,3,4,5,6]
-  myList.reverse()
-  print(myList)
-
-  #>[6, 5, 4, 3, 2, 1]
-  ```
-
-- `max()` : get the item with maximum value
-
-  ```python
-  myList = [6,4,5,1,2,3]
-  res = max(myList)
-  print(res)
-
-  #>6
-  ```
-
-- `extend()`: extend the list
-
-  ```python
-  list1 = [1,2,3]
-  list2 = ['a','b','c']
-
-  list1.extend(list2)
-
-  print(list1)
-
-  #>[1, 2, 3, 'a', 'b', 'c']
-  ```
-
-<br>
-<br>
-<br>
-<br>
