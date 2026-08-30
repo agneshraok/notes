@@ -6,14 +6,14 @@
   - [Creating Dictionaries](#creating-dictionaries)
     - [Criteria for key](#criteria-for-key)
   - [Methods](#methods)
-    - [Inserting an element](#inserting-an-element)
+    - [Insert an element](#insert-an-element)
     - [Get all key value pairs](#get-all-key-value-pairs)
     - [Get all keys](#get-all-keys)
     - [Get all values](#get-all-values)
     - [Get a value](#get-a-value)
     - [Delete an elementt](#delete-an-elementt)
     - [Delete all elements](#delete-all-elements)
-    - [Sorting](#sorting)
+    - [Sort](#sort)
   - [Default Dict](#default-dict)
     - [Default dict methods](#default-dict-methods)
 
@@ -109,7 +109,7 @@ In Python, a type can be used as a dictionary key only if it is [hashable](../se
 | Get all key value pairs | items()     | map.items()                            | $O(n)$          |
 | Get all keys            | keys()      | map.keys()                             | $O(n)$          |
 | Get all values          | values()    | map.values()                           | $O(n)$          |
-| Get value               | [] operator | map['a']                               | $O(1)$          |
+| Get a value             | [] operator | map['a']                               | $O(1)$          |
 |                         | get(key)    | map.get('a')                           | $O(1)$          |
 | Delete an element       | pop(key)    | map.pop('a')                           | $O(1)$          |
 |                         | popitem()   | map.popitem()                          | $O(1)$          |
@@ -120,7 +120,7 @@ In Python, a type can be used as a dictionary key only if it is [hashable](../se
 <br/>
 <br/>
 
-### Inserting an element
+### Insert an element
 
 ```python
 my_dict={'Dave' : '001' , 'Ava': '002' , 'Joe': '003'}
@@ -238,7 +238,7 @@ print(my_dict.keys())
 <br/>
 <br/>
 
-### Sorting
+### Sort
 
 1. Sorting dicts by keys. `sorted()` function returns a list of sorted elements which needs to be converted to `dict`.
 
