@@ -4,9 +4,13 @@
 
 - [Tuples](#tuples)
   - [Creating tuples](#creating-tuples)
-  - [Inserting items into a tuple](#inserting-items-into-a-tuple)
-  - [Accesing items in tuple](#accesing-items-in-tuple)
-  - [Deleting Items from a tuple](#deleting-items-from-a-tuple)
+    - [Create from delete](#create-from-delete)
+    - [Create from type cast](#create-from-type-cast)
+    - [Create from concatenation](#create-from-concatenation)
+    - [Create from unpacking](#create-from-unpacking)
+  - [Methods](#methods)
+    - [Access element](#access-element)
+    - [Access elements](#access-elements)
   - [Unpacking tuples](#unpacking-tuples)
   - [\* Operator](#operator)
 
@@ -15,6 +19,11 @@
 <br>
 
 
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 # Tuples
 
@@ -25,63 +34,19 @@ One among the 4 built in data types to store collection of data. (Other 3 are se
 1. tuples can contain duplicate Items.
 1. tuple items can of be different datatypes.
 
-<br>
-<br>
-<br>
+<br/>
+<br/>
+<br/>
 
 ## Creating tuples
 
-- tuples are created using paranthesis.
-  ```py
-  myTup = (1, 'daf', True, 1)
-  ```
+tuples are created using paranthesis.
 
-<br>
-<br>
-<br>
+```py
+myTup = (1, 'daf', True, 1)
+```
 
-## Inserting items into a tuple
-
-As tuple is unmutable, we do not have append() or insert() methods. We create a new tuple when we modify it.
-
-<br>
-
-1. tuple concatenation using `+` operator
-
-   ```py
-   myTup = (1,2)
-   myTup = myTup + ('z',)  # , is a must in this case else python will consider ('z') as str!
-   print(myTup)
-
-   #> (1, 2, 'z')
-   ```
-
-<br>
-
-2. Unpacking inside a tuple
-
-   ```py
-   a = (1,2)
-   b = 'z'
-   new = (*a, b)   #THIS IS INTERSTING
-   new
-
-   #> (1, 2, 'z')
-   ```
-
-3. By Type Casting
-
-   ```py
-   a = (1,2)
-
-   a = list(a)   #type casting into a list
-   a.append('z')
-
-   a = tuple(a)  # type casting back to a tuple
-   print(a)
-
-   #>(1, 2, 'z')
-   ```
+As tuple is unmutable, we do not have `append()` or `insert()` methods. We create a new tuple when we modify it.
 
 - Essentially by inserting items we are not modifying the tuple but rather a new tuple object is created every time we do some modification, hence we say tuples are immutable.
 
@@ -101,29 +66,107 @@ As tuple is unmutable, we do not have append() or insert() methods. We create a 
   #>We can see that the id's are different
   ```
 
-<br>
-<br>
-<br>
+<br/>
+<br/>
 
-## Accesing items in tuple
+### Create from delete
 
-- Accesing single item
+Removing last item using manipulation
 
-  ```py
-  myTup = (1,2,3,1,2)
-  print(myTup[1])
+```py
+tup = (1,2,3,4,5)
+tup = tup[:-1]
+print(tup)
 
-  #>2
-  ```
+#>(1, 2, 3, 4)
+```
 
-- Accesing multiple items
+<br/>
+<br/>
 
-  ```py
-  myTup = (1,2,3,4,1,2,3)
-  print(myTup[0:2])
+### Create from type cast
 
-  #>(1, 2)
-  ```
+```py
+tup = (1,2,3,4,5)
+
+tup = list(tup)
+tup.pop(1)
+
+tup = tuple(tup)
+print(tup)
+
+#>(1, 3, 4, 5)
+```
+
+<br/>
+<br/>
+
+### Create from concatenation
+
+tuple concatenation using `+` operator
+
+```py
+myTup = (1,2)
+myTup = myTup + ('z',)  # , is a must in this case else python will consider ('z') as str!
+print(myTup)
+
+#> (1, 2, 'z')
+```
+
+<br/>
+<br/>
+
+### Create from unpacking
+
+Unpacking inside a tuple
+
+```py
+a = (1,2)
+b = 'z'
+new = (*a, b)   #THIS IS INTERSTING
+new
+
+#> (1, 2, 'z')
+```
+
+<br/>
+<br/>
+<br/>
+
+## Methods
+
+| Operation       | Method      | Example   | Time complexity |
+| --------------- | ----------- | --------- | --------------- |
+| Access element  | [] operator | nums[2]   | $O(1)$          |
+| Access elements | [] operator | nums[2:5] | $O(k)$          |
+
+<br/>
+<br/>
+
+### Access element
+
+Accesing single item
+
+```py
+myTup = (1,2,3,1,2)
+print(myTup[1])
+
+#>2
+```
+
+<br/>
+<br/>
+
+### Access elements
+
+Accesing multiple items
+
+```py
+myTup = (1,2,3,4,1,2,3)
+print(myTup[0:2])
+
+#>(1, 2)
+```
 
 - Illustration for concept clarity
 
@@ -142,39 +185,9 @@ As tuple is unmutable, we do not have append() or insert() methods. We create a 
   #>('mango', 'melon', 'kiwi', 'orange', 'cherry', 'banana', 'apple')
   ```
 
-<br>
-<br>
-<br>
-
-## Deleting Items from a tuple
-
-- Removing last item using manipulation
-
-  ```py
-  tup = (1,2,3,4,5)
-  tup = tup[:-1]
-  print(tup)
-
-  #>(1, 2, 3, 4)
-  ```
-
-- Type casting
-
-  ```py
-  tup = (1,2,3,4,5)
-
-  tup = list(tup)
-  tup.pop(1)
-
-  tup = tuple(tup)
-  print(tup)
-
-  #>(1, 3, 4, 5)
-  ```
-
-<br>
-<br>
-<br>
+<br/>
+<br/>
+<br/>
 
 ## Unpacking tuples
 
@@ -189,9 +202,9 @@ As tuple is unmutable, we do not have append() or insert() methods. We create a 
   #>'apple'
   ```
 
-<br>
-<br>
-<br>
+<br/>
+<br/>
+<br/>
 
 ## \* Operator
 
@@ -223,7 +236,3 @@ As tuple is unmutable, we do not have append() or insert() methods. We create a 
   #['banana', 'cherry', 'strawberry']
   #raspberry
   ```
-
-<br>
-<br>
-<br>
