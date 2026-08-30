@@ -6,12 +6,12 @@
   - [Creating Dictionaries](#creating-dictionaries)
     - [Criteria for key](#criteria-for-key)
   - [Methods](#methods)
-    - [Insert an element](#insert-an-element)
+    - [Insert element](#insert-element)
     - [Get all key value pairs](#get-all-key-value-pairs)
     - [Get all keys](#get-all-keys)
     - [Get all values](#get-all-values)
     - [Get a value](#get-a-value)
-    - [Delete an elementt](#delete-an-elementt)
+    - [Delete elementt](#delete-elementt)
     - [Delete all elements](#delete-all-elements)
     - [Sort](#sort)
   - [Default Dict](#default-dict)
@@ -105,13 +105,13 @@ In Python, a type can be used as a dictionary key only if it is [hashable](../se
 
 | Operation               | Method      | Example                                | Time complexity |
 | ----------------------- | ----------- | -------------------------------------- | --------------- |
-| Insert an element       | [] opertor  | map["new key"] = "new value"           | $O(1)$          |
+| Insert element          | [] opertor  | map["new key"] = "new value"           | $O(1)$          |
 | Get all key value pairs | items()     | map.items()                            | $O(n)$          |
 | Get all keys            | keys()      | map.keys()                             | $O(n)$          |
 | Get all values          | values()    | map.values()                           | $O(n)$          |
 | Get a value             | [] operator | map['a']                               | $O(1)$          |
 |                         | get(key)    | map.get('a')                           | $O(1)$          |
-| Delete an element       | pop(key)    | map.pop('a')                           | $O(1)$          |
+| Delete element          | pop(key)    | map.pop('a')                           | $O(1)$          |
 |                         | popitem()   | map.popitem()                          | $O(1)$          |
 |                         | del keyword | del map['a']                           | $O(1)$          |
 | Delete all elements     | clear()     | map.clear()                            | $O(n)$          |
@@ -120,7 +120,7 @@ In Python, a type can be used as a dictionary key only if it is [hashable](../se
 <br/>
 <br/>
 
-### Insert an element
+### Insert element
 
 ```python
 my_dict={'Dave' : '001' , 'Ava': '002' , 'Joe': '003'}
@@ -206,7 +206,7 @@ print(my_dict.keys())
 <br/>
 <br/>
 
-### Delete an elementt
+### Delete elementt
 
 - items can be deleted using `del()`, `pop()`, `popitem()`
 
