@@ -23,11 +23,6 @@
 
 
 
-<br/>
-<br/>
-<br/>
-<br/>
-
 # Dictionary
 
 A dictionary is a map datastructure with key and value pairs.
